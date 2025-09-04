@@ -71,7 +71,7 @@ variable "engine" {
     Note that for Amazon Aurora instances the engine must match the [DB cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster's engine'.
     For information on the difference between the available Aurora MySQL engines see [Comparison between Aurora MySQL 1 and Aurora MySQL 2](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraMySQLReleaseNotes/AuroraMySQL.Updates.20180206.html) in the Amazon RDS User Guide.
         
-DESCRIPTION 
+DESCRIPTION
 }
 
 variable "port" {
@@ -280,7 +280,7 @@ variable "recovery_window_in_days" {
       This value can be `0` to force deletion without recovery or range from `7` to `30` days.
       The default value is `30`.
 
-DESCRIPTION 
+DESCRIPTION
 }
 
 variable "password_length" {
