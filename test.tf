@@ -14,7 +14,7 @@ variable "db_name" {
     See the AWS documentation for more details on what applies for those engines.
     If you are providing an Oracle db name, it needs to be in all upper case. Cannot be specified for a replica.
     
-  DESCRIPTION 
+DESCRIPTION
 }
 
 variable "engine_version" {
@@ -25,7 +25,7 @@ variable "engine_version" {
     (Optional) The engine version to use. If `auto_minor_version_upgrade` is enabled, you can provide a prefix of the version such as 8.0 (for 8.0.36).
     The actual engine version used is returned in the `attribute engine_version_actual`, see Attribute Reference below.
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "license_model" {
@@ -41,7 +41,7 @@ variable "license_model" {
     - RDS for Oracle: `bring-your-own-license` | `license-included`
     - RDS for PostgreSQL: `postgresql-license`
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "instance_class" {
@@ -52,7 +52,7 @@ variable "instance_class" {
     (Required) The instance type of the RDS instance.
     [Available Instance types for Oracle](https://aws.amazon.com/de/rds/oracle/instance-types/)
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "identifier" {
@@ -71,7 +71,7 @@ variable "engine" {
     Note that for Amazon Aurora instances the engine must match the [DB cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster's engine'.
     For information on the difference between the available Aurora MySQL engines see [Comparison between Aurora MySQL 1 and Aurora MySQL 2](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraMySQLReleaseNotes/AuroraMySQL.Updates.20180206.html) in the Amazon RDS User Guide.
         
-  DESCRIPTION 
+DESCRIPTION 
 }
 
 variable "port" {
@@ -90,7 +90,7 @@ variable "maintenance_window" {
     "ddd:hh24:mi-ddd:hh24:mi". Eg: "Mon:00:00-Mon:03:00".
     See [RDS Maintenance Window docs](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow) for more information.
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "backup_window" {
@@ -126,7 +126,7 @@ variable "allocated_storage" {
     If `max_allocated_storage` is configured, this argument represents the initial storage allocation and differences from the configuration will be ignored automatically when Storage Autoscaling occurs.
     If `replicate_source_db` is set, the value is ignored during the creation of the instance.
     
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "max_allocated_storage" {
@@ -138,7 +138,7 @@ variable "max_allocated_storage" {
     Configuring this will automatically ignore differences to `allocated_storage`.
     Must be greater than or equal to `allocated_storage` or `0` to disable Storage Autoscaling.
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "performance_insights_retention_period" {
@@ -150,7 +150,7 @@ variable "performance_insights_retention_period" {
     Valid values are 7, 731 (2 years) or a multiple of 31.
     When specifying `performance_insights_retention_period`, `performance_insights_enabled` needs to be set to true.
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "monitoring_role_arn" {
@@ -161,7 +161,7 @@ variable "monitoring_role_arn" {
     (Optional) The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs.
     You can find more information on the [AWS Documentation what IAM permissions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html) are needed to allow Enhanced Monitoring for RDS Instances.
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 /*
@@ -213,7 +213,7 @@ variable "db_option_group_options" {
       name                                 = (Required) Name of the setting.
       value                                = (Required) Value of the setting.
     
-  DESCRIPTION
+DESCRIPTION
 }
 
 /*
@@ -258,7 +258,7 @@ variable "db_parameter_group_parameters" {
     value               = (Required) The value of the DB parameter.
     apply_method        = (Optional) "immediate" (default), or "pending-reboot". Some engines can't apply some parameters without a reboot, and you will need to specify "pending-reboot" here.
     
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "environment" {
@@ -280,7 +280,7 @@ variable "recovery_window_in_days" {
       This value can be `0` to force deletion without recovery or range from `7` to `30` days.
       The default value is `30`.
 
-  DESCRIPTION 
+DESCRIPTION 
 }
 
 variable "password_length" {
@@ -297,7 +297,7 @@ variable "storage_throughput" {
     (Optional) The storage throughput value for the DB instance. Can only be set when `storage_type` is "gp3".
     Cannot be specified if the allocated_storage value is below a per-`engine` threshold.
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "iops" {
@@ -309,7 +309,7 @@ variable "iops" {
     Can only be set when `storage_type` is "io1", "io2 or "gp3".
     Cannot be specified for gp3 storage if the `allocated_storage` value is below a per-`engine` threshold.
         
-  DESCRIPTION
+DESCRIPTION
 }
 
 variable "apply_immediately" {
@@ -384,5 +384,5 @@ variable "debug_mode" {
     If "False" the DEBUG_MODE is in `WARNING` = less verbose
     If "True" the DEBUG_MODE is in `DEBUG` = very verbose
         
-  DESCRIPTION
+DESCRIPTION
 }
